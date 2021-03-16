@@ -14,10 +14,15 @@ def main():
 def alphabetically_first_county(counties):
     """Return the county with the name that comes first alphabetically."""
     #Hint: you can use < to compare strings in Python. ex) "cat" < "dog" gives the value True
-    
+    firstCounty = counties[0]["County"]
+    for county in counties:
+        if county["County"] < firstCounty:
+            firstCounty = county["County"]
+    return firstCounty
     
 def percent_most_under_18(counties):
     """Return the highest percent of under 18 year olds."""    
+    
     
 
 def county_most_under_18(counties):
