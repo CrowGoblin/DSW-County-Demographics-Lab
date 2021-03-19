@@ -21,13 +21,22 @@ def alphabetically_first_county(counties):
     return firstCounty
     
 def percent_most_under_18(counties):
-    """Return the highest percent of under 18 year olds."""    
+    """Return the highest percent of under 18 year olds."""
+    firstCounty = counties[0]["Age"]["Percent Under 18 Years"]
+    for county in counties:
+        if county["Age"]["Percent Under 18 Years"] < firstCounty:
+            firstCounty = county["Age"]["Percent Under 18 Years"]
+    return firstCounty
     
     
 
 def county_most_under_18(counties):
     """Return the NAME of a county with the highest percent of under 18 year olds."""
-    
+    firstCounty = counties[0]["Age"]["Percent Under 18 Years"]
+    for county in counties:
+        if county["Age"]["Percent Under 18 Years"] > firstCounty:
+            firstCounty = county["Age"]["Percent Under 18 Years"]
+    return firstCounty
     
 def lowest_median_income(counties):
     """Return a name of a county with the lowest median household income"""
